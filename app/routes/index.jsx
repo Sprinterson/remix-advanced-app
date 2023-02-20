@@ -43,4 +43,4 @@ export default function Index() {
   );
 }
 
-export function meta() { }
+export function meta()  { }
