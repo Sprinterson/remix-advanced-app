@@ -19,7 +19,7 @@ function ExpenseStatistics({ expenses }) {
   return (
     <section>
       <h2>Summary Statistics</h2>
-      <dl id="expense-statistics">
+      <dl id='expense-statistics'>
         <div>
           <dt>Total</dt>
           <dd>${sum.toFixed(2)}</dd>
