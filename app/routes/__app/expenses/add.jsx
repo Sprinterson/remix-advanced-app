@@ -16,3 +16,10 @@ export default function AddExpensesPage() {
     </Modal>
   );
 }
+
+export function action() {
+  return {
+    title: 'Add Expense',
+    component: <AddExpensesPage />,
+  };
+}
