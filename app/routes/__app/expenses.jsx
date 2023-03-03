@@ -28,7 +28,3 @@ export default function ExpensesLayout() {
     </>
   );
 }
-
-export function links() {
-  return [{ rel: 'stylesheet', href: expensesStyles }];
-}
