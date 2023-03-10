@@ -27,7 +27,7 @@ function ExpenseForm() {
   return (
     // form reloads the document, Form sends request behind the scenes
     <Form
-      method='post'
+      method={expenseData ? 'patch' : 'post'}
       className='form'
       id='expense-form'
     >
