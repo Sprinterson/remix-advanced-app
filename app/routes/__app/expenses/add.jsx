@@ -30,7 +30,6 @@ export async function action({ request }) {
     return error;
   }
 
-
   await addExpense(expenseData);
   return redirect('/expenses');
 }
