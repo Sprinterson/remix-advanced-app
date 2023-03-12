@@ -1,7 +1,7 @@
-import { Outlet } from "@remix-run/react";
+import { Outlet } from '@remix-run/react';
 
-import MainHeader from "~/components/navigation/MainHeader";
-import marketingStyles from "~/styles/marketing.css";
+import MainHeader from '~/components/navigation/MainHeader';
+import marketingStyles from '~/styles/marketing.css';
 
 export default function MarketingAppLayout() {
   return (

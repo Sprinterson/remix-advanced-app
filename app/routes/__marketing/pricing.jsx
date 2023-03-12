@@ -21,11 +21,11 @@ const PRICING_PLANS = [
 
 export default function PricingPage() {
   return (
-    <main id="pricing">
+    <main id='pricing'>
       <h2>Great Product, Simple Pricing</h2>
-      <ol id="pricing-plans">
+      <ol id='pricing-plans'>
         {PRICING_PLANS.map((plan) => (
-          <li key={plan.id} className="plan">
+          <li key={plan.id} className='plan'>
             <PricingPlan
               title={plan.title}
               price={plan.price}
