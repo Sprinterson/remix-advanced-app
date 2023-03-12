@@ -9,7 +9,7 @@ export default function AuthPage() {
 
 export async function action({ request }) {
   const searchParams = new URL(request.url).searchParams;
-  const authMode = searchParamas.get('mode') || 'login';
+  const authMode = searchParams.get('mode') || 'login';
 
   const formData = await request.formData();
   const credentials = Object.fromEntries(formData);
