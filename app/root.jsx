@@ -72,7 +72,20 @@ export function CatchBoundary() {
   )
 }
 
-export function ErrorBoundary() {
+export function ErrorBoundary({ error }) {
+  return (
+    <Document title='An error occured'>
+      <main>
+        <Error title='An error occured'>
+          <p>
+            {error.message ||
+              'Something went wrong. Please try again later.'}
+          </p>
+          <p>Back to <Link to='/'>safety</Link></p>
+        </Error>
+      </main>
+    </Document>
+  )
 }
 
 export function links() {
