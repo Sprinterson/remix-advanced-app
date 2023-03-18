@@ -1,3 +1,6 @@
+import { redirect } from '@remix-run/node';
+
+import { signup } from '~/data/auth.server';
 import { validateCredentials } from '~/data/validation.server';
 import authStyles from '~/styles/auth.css';
 import AuthForm from '../../components/auth/AuthForm';
@@ -11,7 +14,6 @@ export default function AuthPage() {
 export async function action({ request }) {
   const searchParams = new URL(request.url).searchParams;
   const authMode = searchParams.get('mode') || 'login';
-
   const formData = await request.formData();
   const credentials = Object.fromEntries(formData);
 
@@ -20,13 +22,19 @@ export async function action({ request }) {
   } catch (error) {
     return error;
   }
-  
 
-  if (authMode === 'login') {
-    // login logic
-  } else {
-    // signup logic
-  };
+  try {
+    if (authMode === 'login') {
+      // login logic
+    } else {
+      await signup(credentials);
+      return redirect('/expenses');
+    };
+  } catch (error) {
+    if (error.status === 422) {
+      return { credentials: error.message };
+    }
+  }
 }
 
 export function links() {
