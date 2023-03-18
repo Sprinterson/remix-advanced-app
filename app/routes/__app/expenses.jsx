@@ -6,6 +6,7 @@ import { getExpenses } from '~/data/expenses.server';
 
 export default function ExpensesLayout() {
   const expenses = useLoaderData();
+  console.log(expenses);
   const hasExpenses = expenses && expenses.length > 0;
 
   return (

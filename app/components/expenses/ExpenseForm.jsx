@@ -24,6 +24,10 @@ function ExpenseForm() {
       date: '',
     };
 
+  if (params.id && !expenseData) {
+    return <p>Invalid expense id.</p>
+  }
+
   return (
     // form reloads the document, Form sends request behind the scenes
     <Form
