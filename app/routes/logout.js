@@ -7,4 +7,4 @@ export function action({ request }) {
   }
 
   return destroyUserSession(request);
-}
+} 
