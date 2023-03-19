@@ -1,3 +1,4 @@
+import { json } from '@remix-run/node';
 import { Link, Outlet, useLoaderData } from '@remix-run/react';
 import { FaDownload, FaPlus } from 'react-icons/fa';
 
@@ -36,7 +37,17 @@ export default function ExpensesLayout() {
 
 export async function loader({ request }) {
   const userId = await requireUserSession(request);
-
   const expenses = await getExpenses(userId);
-  return expenses;
+
+  return json(expenses, {
+    headers: {
+      'Cache-Control': 'max-age=3',
+    },
+  });
+}
+
+export function headers({ loaderHeaders }) {
+  return {
+    'Cache-Control': loaderHeaders.get('Cache-Control'),
+  }
 }
