@@ -14,7 +14,7 @@ import Error from './components/util/Error';
 
 export const meta = () => ({
   charset: 'utf-8',
-  title: 'New Remix App',
+  title: 'RemixExpenses',
   viewport: 'width=device-width,initial-scale=1',
 });
 
@@ -22,6 +22,7 @@ function Document({ title, children }) {
   return (
     <html lang='en'>
       <head>
+        {title && <title>{title}</title>}
         <Meta />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
