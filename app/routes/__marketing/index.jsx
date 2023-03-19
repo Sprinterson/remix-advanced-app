@@ -49,3 +49,9 @@ export function meta() {
     description: 'Manage your expenses in one central place.',
   }
 }
+
+export function headers() {
+  return {
+    'Cache-Control': 'max-age=3600',
+  }
+}
